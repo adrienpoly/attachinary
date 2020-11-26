@@ -9,5 +9,12 @@ spec/dummy/.sass-cache
 spec/dummy/config/cloudinary.yml
 bin/
 
-.rspec
+
 config/cloudinary.yml
+
+# Should not go into published repository
+Gemfile.lock
+gemfiles/*.lock
+
+# Failed rspec examples
+spec/examples.txt

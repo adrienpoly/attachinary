@@ -1,21 +1,45 @@
-source "http://rubygems.org"
+source 'http://rubygems.org'
 
 # Declare your gem's dependencies in attachinary.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec
 
+# Current stable version, actual version will be selected in CI by appraisal
+gem 'rails', '~> 5.1.0'
+
 # used by the dummy application
 gem 'jquery-rails'
 gem 'cloudinary'
 gem 'simple_form'
 
-group :assets do
-  gem 'coffee-rails'
+# Assets gems used in dummy application
+gem 'coffee-rails'
+gem 'sass-rails'
+gem 'bootstrap-sass', '~> 3.3.5'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-blueimp-file-upload', '7.2.1'
 end
 
-group :mongoid do
-  gem 'mongoid'
+# Stick with a working configuration
+gem 'mongoid'
+
+group :development, :test do
+  gem 'appraisal'
+  gem 'pry'
+  gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'valid_attribute'
+  gem 'capybara', '>= 2.15.2'
+  gem 'capybara-screenshot'
+  gem 'selenium-webdriver'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'travis'
 end
 
 
